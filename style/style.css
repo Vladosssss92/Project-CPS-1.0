@@ -5,19 +5,297 @@
   border: 0;
   font-weight: normal;
   list-style: none;
-  font-family: TT Lakes;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
   text-align: left;
   box-sizing: border-box;
-  background: #f8f8f8;
 }
-*:hover,
-*:link,
-*:active,
-*:focus,
-*:visited {
+*:hover, *:link, *:active, *:focus, *:visited {
   text-decoration: none;
   color: black;
 }
+
+body {
+  font-family: "TT Lakes";
+  background-color: #F8F8F8;
+  font-size: 14px;
+  line-height: 24px;
+}
+body button {
+  cursor: pointer;
+}
+body .about-all,
+body .main__section--close-button {
+  display: none;
+}
+body .header__nav {
+  border-bottom: #D9FFF5 1px solid;
+}
+body .header__nav .nav-list {
+  height: 88px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+body .header__nav .nav-list .nav-list-wrapper__repair-status,
+body .header__nav .nav-list .nav-list-wrapper-menu-logo {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+body .header__nav .nav-list .nav-list__item {
+  position: relative;
+}
+body .header__nav .nav-list .nav-list__item .nav-list__item--link-logo::after {
+  content: "";
+  border: 1px solid #eaeaea;
+  border-radius: 1px;
+  margin-left: 16px;
+  height: 32px;
+  position: absolute;
+  top: 14px;
+}
+body .main__title {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 700;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  position: relative;
+}
+body .main__title::before {
+  content: "";
+  border-right: 4px solid #41f6d7;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+}
+body .main__nav--list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  gap: 20px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+}
+body .main__nav--list .main__nav--list-item {
+  font-size: 16px;
+  border: transparent 2px solid;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+body .main__nav--list .main__nav--list-item a {
+  white-space: nowrap;
+}
+body .main__nav--list .main__nav--list-item:active, body .main__nav--list .main__nav--list-item:hover {
+  border: #B8FFEC 2px solid;
+  background-color: #ffffff;
+}
+body .main__nav--list .main__nav--list-item-active {
+  border: #B8FFEC 2px solid;
+  background-color: #ffffff;
+}
+body .main__wrapper-about .section-about__text {
+  padding: 0 16px 16px 16px;
+  line-height: 18px;
+}
+body .main__wrapper-about .main__section--next-button,
+body .main__wrapper-about .main__section--close-button {
+  padding-left: 48px;
+  padding-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+}
+body .main__wrapper-about .main__section--next-button::before,
+body .main__wrapper-about .main__section--close-button::before {
+  content: "";
+  background-image: url("/image/expand.svg");
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 13px;
+  left: 20px;
+}
+body .main__wrapper-about .main__section--close-button::before {
+  transform: rotate(180deg);
+}
+body .main__section--image-cps-logo {
+  width: 100%;
+  padding-bottom: 24px;
+}
+body .title-service {
+  color: #7E7E82;
+  font-size: 16px;
+  padding: 16px;
+  border-top: #D9FFF5 1px solid;
+  background-color: #ffffff;
+  text-transform: uppercase;
+}
+body .slider-brands,
+body .slider-appliances,
+body .prise-list-mobile {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  gap: 16px;
+  padding: 16px;
+}
+body .slider-brands .slider-brands__item,
+body .slider-appliances .slider-brands__item,
+body .prise-list-mobile .slider-brands__item {
+  height: 72px;
+  border: #EAEAEA 1px solid;
+  border-radius: 5px;
+  background-color: #ffffff;
+  min-width: 220px;
+  max-width: 240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .slider-brands .slider-brands__item img,
+body .slider-appliances .slider-brands__item img,
+body .prise-list-mobile .slider-brands__item img {
+  padding-left: 16px;
+}
+body .slider-brands .slider-brands__item a,
+body .slider-appliances .slider-brands__item a,
+body .prise-list-mobile .slider-brands__item a {
+  padding-right: 16px;
+  padding-top: 5px;
+}
+body .slider-brands .slider-appliances__item,
+body .slider-appliances .slider-appliances__item,
+body .prise-list-mobile .slider-appliances__item {
+  background-color: #ffffff;
+  height: 160px;
+  border: #EAEAEA 1px solid;
+  border-radius: 5px;
+  min-width: 220px;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .slider-brands .slider-appliances__item .slider-appliances__link,
+body .slider-appliances .slider-appliances__item .slider-appliances__link,
+body .prise-list-mobile .slider-appliances__item .slider-appliances__link {
+  padding: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.200000003px;
+}
+body .slider-brands .slider-appliances__item .slider-appliances__link--img,
+body .slider-appliances .slider-appliances__item .slider-appliances__link--img,
+body .prise-list-mobile .slider-appliances__item .slider-appliances__link--img {
+  align-self: flex-end;
+  padding-right: 16px;
+  padding-bottom: 6px;
+}
+body .prise-list-mobile__item {
+  border: #EAEAEA 1px solid;
+  border-radius: 5px;
+  min-width: 260px;
+  height: 200px;
+  background-color: #ffffff;
+  padding: 16px;
+  padding-top: 0;
+  position: relative;
+}
+body .prise-list-mobile__item p {
+  line-height: 18px;
+}
+body .prise-list-mobile__item .prise-list-head {
+  padding-top: 16px;
+  color: #7E7E82;
+}
+body .prise-list-mobile__item .prise-list-mobile__item--order {
+  right: 10px;
+  bottom: 10px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  width: 119px;
+  height: 32px;
+  background-color: #FF3E79;
+  border-radius: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+}
+body .prise-list-mobile__item .prise-list-mobile__item--order img {
+  width: 7px;
+  height: 10px;
+}
+body .slider-dots-list {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+body .slider-dots-list .slider-dots-list__item {
+  border: #DDDDDD 6px solid;
+  border-radius: 50%;
+}
+body .slider-dots-list .slider-dots-list__item--active,
+body .slider-dots-list .slider-dots-list__item:active {
+  border: #B5B6BC 6px solid;
+}
+body .section-price__info,
+body .section-price__commercial-proposal {
+  padding-left: 16px;
+  padding-right: 16px;
+  letter-spacing: 0.2px;
+}
+body .section-price__commercial-proposal {
+  display: inline-block;
+  padding-top: 16px;
+  padding-bottom: 40px;
+  font-weight: 500;
+  position: relative;
+}
+body .section-price__commercial-proposal img {
+  position: absolute;
+  top: 22px;
+  right: -1px;
+}
+body .footer__list {
+  border-top: #D9FFF5 1px solid;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body .footer__list .footer__list--item,
+body .footer__list a {
+  text-align: center;
+  color: #7E7E82;
+}
+
+@media (max-width: 450px) {
+  .menu,
+  .feedback,
+  .order-call,
+  .section-price__other,
+  .nav-list-wrapper__call-chat-profile,
+  .list-service__wrapper,
+  .about-tablet,
+  .about-desktop,
+  .button-show-mobile {
+    display: none;
+  }
+}
+@media (min-width: 451px) and (max-width: 768px) {
+  body .main .section-repair .slider-brands {
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=style.css.map */
