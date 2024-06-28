@@ -19,15 +19,20 @@ body {
   font-size: 14px;
   line-height: 24px;
 }
-body .main-opacity {
+body .main-opacity,
+body .menu-opacity {
   opacity: 5%;
   position: fixed;
+  pointer-events: none;
+  transition-duration: 400ms;
+}
+body .main-opacity {
+  opacity: 1%;
 }
 body .menu {
   width: 320px;
   height: 100%;
   background-color: #ffffff;
-  box-shadow: 5px 0 50px 1px gray;
   overflow: auto;
 }
 body .menu .menu__header {
@@ -109,9 +114,11 @@ body .order-call {
   width: 440px;
   box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
   background-color: #ffffff;
-  position: absolute;
   right: 0;
   height: 100%;
+  z-index: 2;
+  position: fixed;
+  right: -100%;
 }
 body .feedback .feedback__close-button,
 body .feedback .order-call__close-button,
@@ -208,6 +215,23 @@ body .order-call .order-call__form .order-call__form--button img {
   width: 7px;
   height: 10px;
 }
+body .menu-animation-open {
+  left: 0;
+  transition-duration: 400ms;
+}
+body .menu-animation-close {
+  left: -100%;
+  transition-duration: 400ms;
+}
+body .feedback-animation-open,
+body .order-call-animation-open {
+  right: 0;
+  transition-duration: 400ms;
+}
+body .feedback-animation-close,
+body .order-call-animation-close {
+  transition-duration: 400ms;
+}
 body button {
   cursor: pointer;
 }
@@ -232,12 +256,12 @@ body .button-show-mobile::before {
   left: 20px;
 }
 body .main__section--close-button::before,
-body .section-repair__hidden-all-brand--button-hidden::before,
+body .section-repair__hidden-all-brand::before,
 body .section-appliances__hidden-all-appliances--button-hidden::before {
   transform: rotate(180deg);
 }
 body .about-all,
-body .main__section--close-button {
+body .button-hidden {
   display: none;
 }
 body .header__nav {
@@ -315,7 +339,8 @@ body .main__nav--list .main__nav--list-item-active {
   border: #B8FFEC 2px solid;
   background-color: #ffffff;
 }
-body .main__wrapper-about .section-about__text {
+body .main__wrapper-about .section-about__text,
+body .main__wrapper-about .section-about__text--visibility {
   padding: 0 16px 16px 16px;
   line-height: 18px;
 }
@@ -324,7 +349,7 @@ body .main__section--image-cps-logo {
   margin-bottom: 24px;
 }
 body .title-service {
-  background: linear-gradient(270deg, #FFFFFF 0%, rgba(248, 248, 248, 0.5960784314) 0.61%);
+  background: linear-gradient(270deg, #FFFFFF 61%, rgba(248, 248, 248, 0.5960784314));
   color: #7E7E82;
   font-size: 16px;
   padding: 16px;
@@ -348,7 +373,7 @@ body .prise-list-mobile .slider-brands__item {
   border-radius: 5px;
   background-color: #ffffff;
   min-width: 220px;
-  max-width: 240px;
+  width: 240px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -371,7 +396,7 @@ body .prise-list-mobile .slider-appliances__item {
   height: 160px;
   border: #EAEAEA 1px solid;
   border-radius: 5px;
-  min-width: 220px;
+  min-width: 240px;
   max-width: 240px;
   display: flex;
   flex-direction: column;
@@ -479,8 +504,13 @@ body .section-price .prise-list-other {
   margin-left: 16px;
   margin-right: 16px;
 }
-body .section-price .prise-list-other .prise-list-other--wrapper {
-  border-radius: 2em;
+body .section-price .prise-list-other .prise-list-other-services:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+body .section-price .prise-list-other .prise-list-other-services:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 body .section-price .prise-list-other .prise-list-other__item {
   display: flex;
@@ -539,8 +569,6 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
 }
 
 @media (max-width: 500px) {
-  body .menu-hidden,
-  body .feedback,
   body .section-price__other,
   body .nav-list-wrapper,
   body .about-tablet,
@@ -552,7 +580,28 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   body .menu {
     position: fixed;
     z-index: 1;
+  }
+  body .feedback,
+  body .order-call,
+  body .menu {
     width: 100%;
+  }
+  body .feedback .feedback__close-button,
+  body .feedback .order-call__close-button,
+  body .order-call .feedback__close-button,
+  body .order-call .order-call__close-button,
+  body .menu .feedback__close-button,
+  body .menu .order-call__close-button {
+    left: 30px;
+    top: 24px;
+  }
+  body .feedback .order-call__title,
+  body .feedback .feedback__title,
+  body .order-call .order-call__title,
+  body .order-call .feedback__title,
+  body .menu .order-call__title,
+  body .menu .feedback__title {
+    margin-top: 34px;
   }
   body .header .nav-list .nav-list-wrapper__call-chat-profile {
     display: none;
@@ -567,7 +616,7 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
     top: 14px;
   }
 }
-@media (min-width: 501px) and (max-width: 768px) {
+@media (min-width: 501px) and (max-width: 950px) {
   body .footer__list {
     flex-direction: row;
     justify-content: space-around;
@@ -606,22 +655,29 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   }
   body .main .list-service__wrapper,
   body .main .about-desktop,
-  body .main .feedback,
-  body .main .order-call,
   body .main .slider-dots-list,
   body .main .prise-list-mobile,
-  body .main .section-repair__hidden-all-brand--button-hidden,
-  body .main .section-appliances__hidden-all-appliances--button-hidden,
   body .main .hidden-tablet,
   body .main .hidden-desktop {
     display: none;
   }
-  body .menu-hidden {
-    display: none;
+  body .slider-appliances {
+    flex-wrap: wrap;
   }
   body .menu {
+    left: -320px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
+  }
+  body .menu-animation-open {
+    box-shadow: 5px 0 50px 1px gray;
+    left: 0;
+    transition-duration: 400ms;
+  }
+  body .menu-animation-close {
+    box-shadow: 0;
+    left: -320px;
+    transition-duration: 400ms;
   }
   .section-about {
     display: flex;
@@ -643,17 +699,17 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
     flex-wrap: wrap;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 951px) {
+  body .feedback-hidden,
+  body .order-call-hidden {
+    display: none;
+  }
   body .main {
     position: relative;
     margin-left: 320px;
   }
-  body .main .feedback,
-  body .main .order-call,
   body .main .slider-dots-list,
   body .main .prise-list-mobile,
-  body .main .section-repair__hidden-all-brand--button-hidden,
-  body .main .section-appliances__hidden-all-appliances--button-hidden,
   body .main .hidden-desktop {
     display: none;
   }
@@ -694,7 +750,7 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
     flex-wrap: wrap;
   }
   body .slider-appliances {
-    overflow: hidden;
+    flex-wrap: wrap;
   }
   body .footer__list {
     flex-direction: row;
@@ -714,5 +770,8 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
     position: fixed;
     left: 0;
     box-shadow: none;
+  }
+  body .menu .menu__header--button-close {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -8,7 +8,7 @@
     <title>Document</title>
   </head>
   <body>
-    <aside class="main__menu menu menu-hidden">
+    <aside class="main__menu menu">
       <div class="menu__header">
         <div class="menu__header--close-logo">
           <button class="menu__header--button-close">
@@ -52,19 +52,19 @@
         <div class="menu__footer">
           <ul class="footer-list">
             <li class="footer-list__item">
-              <a href="#">
+              <button type="button" class="button-call">
                 <img src="image/call.svg" alt="Позвонить нам" />
-              </a>
+              </button>
             </li>
             <li class="footer-list__item">
-              <a href="#">
+              <button type="button" class="button-message">
                 <img src="image/chat.svg" alt="Написать нам" />
-              </a>
+              </button>
             </li>
             <li class="footer-list__item">
-              <a href="#">
+              <button type="button" class="button-profile">
                 <img src="image/profile.svg" alt="Профиль" />
-              </a>
+              </button>
             </li>
           </ul>
           <p class="menu__footer-contact">
@@ -95,19 +95,98 @@
         </div>
       </div>
     </aside>
+    <aside class="feedback">
+      <button type="button">
+        <img
+          src="image/close.svg"
+          alt="Закрыть окно"
+          class="feedback__close-button button-close-modal"
+        />
+      </button>
+      <h2 class="feedback__title">Обратная связь</h2>
+      <form action="" method="" class="feedback__form">
+        <input
+          type="text"
+          class="feedback__form--name"
+          required
+          placeholder="Имя"
+        />
+        <input
+          type="tel"
+          class="feedback__form--phone"
+          required
+          placeholder="Телефон"
+        />
+        <input
+          type="email"
+          class="feedback__form--email"
+          placeholder="Электронная почта"
+        />
+        <textarea
+          class="feedback__form--message"
+          placeholder="Сообщение"
+        ></textarea>
+        <p class="feedback__form--info">
+          Нажимая “отправить”, вы даете согласие на
+          <a href="#" class="feedback__form--personal-data personal-data"
+            >обработку персональных данных</a
+          >
+          и соглашаетесь с нашей
+          <a href="#" class="feedback__form--privacy policy"
+            >политикой конфиденциальности</a
+          >
+        </p>
+        <button type="submit" class="feedback__form--button">
+          Отправить
+          <img src="image/dropdownwhite.svg" alt="" />
+        </button>
+      </form>
+    </aside>
+    <aside class="order-call">
+      <button type="button">
+        <img
+          src="image/close.svg"
+          alt="Закрыть окно"
+          class="order-call__close-button button-close-modal"
+        />
+      </button>
+      <h2 class="order-call__title">Заказать звонок</h2>
+      <form action="" method="" class="order-call__form">
+        <input
+          type="tel"
+          class="order-call__form--phone"
+          required
+          placeholder="Телефон"
+        />
+        <p class="order-call__form--info">
+          Нажимая “отправить”, вы даете согласие на
+          <a href="#" class="order-call__form--personal-data personal-data"
+            >обработку персональных данных</a
+          >
+          и соглашаетесь с нашей
+          <a href="#" class="order-call__form--privacy policy"
+            >политикой конфиденциальности</a
+          >
+        </p>
+        <button type="submit" class="order-call__form--button">
+          Отправить
+          <img src="image/dropdownwhite.svg" alt="" />
+        </button>
+      </form>
+    </aside>
     <main class="main">
       <header class="header">
         <nav class="header__nav">
           <ul class="header__nav-list nav-list">
             <div class="nav-list-wrapper-menu-logo">
               <li class="nav-list__item">
-                <a href="#" class="nav-list__item--link-menu">
+                <button type="button" class="nav-list__item--link-menu">
                   <img
                     src="image/burger.svg"
                     alt="Меню"
                     class="nav-list__item--image-menu"
                   />
-                </a>
+                </button>
               </li>
               <li class="nav-list__item">
                 <a href="#" class="nav-list__item--link-logo">
@@ -122,22 +201,22 @@
             <div class="nav-list-wrapper">
               <div class="nav-list-wrapper__call-chat-profile">
                 <li class="nav-list__item">
-                  <a href="#" class="nav-list__item-link">
+                  <button type="button" class="button-call">
                     <img
                       src="image/call.svg"
                       alt="Позвонить нам"
                       class="nav-list__item--image-call"
                     />
-                  </a>
+                  </button>
                 </li>
                 <li class="nav-list__item">
-                  <a href="#" class="nav-list__item-link">
+                  <button type="button" class="button-message">
                     <img
                       src="image/chat.svg"
                       alt="Написать нам"
                       class="nav-list__item--image-chat"
                     />
-                  </a>
+                  </button>
                 </li>
                 <li class="nav-list__item">
                   <a href="#" class="nav-list__item-link">
@@ -202,7 +281,7 @@
       </div>
       <nav class="main__nav">
         <ul class="main__nav--list">
-          <li class="main__nav--list-item main__nav--list-item-active">
+          <li class="main__nav--list-item">
             <a href="#">Ремонтируемые бренды</a>
           </li>
           <li class="main__nav--list-item">
@@ -227,29 +306,37 @@
       </nav>
       <section class="main__section-about section-about">
         <div class="main__wrapper-about">
-          <p class="section-about__text about-phone">
+          <p class="section-about__text--visibility about-phone">
             Мы являемся авторизованным сервисным центром по ремонту техники
             Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
             официальной гарантией производителя.
           </p>
-          <p class="section-about__text about-tablet">
+          <p class="section-about__text tablet about-tablet">
             Мы успешно работаем с 1992 года и заслужили репутацию надежного
             партнера, что подтверждает большое количество постоянных клиентов.
           </p>
-          <p class="section-about__text about-desktop">
+          <p class="section-about__text desktop about-desktop">
             Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
             очередь, советуют нас родным и близким.
           </p>
-          <p class="main__section-all about-all">
+          <p
+            class="section-about__text desktop-all main__section-all about-all"
+          >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Accusantium cupiditate quisquam itaque ut ducimus dicta repudiandae
             asperiores et deleniti neque voluptatibus, nam laborum cumque, quasi
             necessitatibus quo voluptas sequi qui.
           </p>
-          <button type="button" class="main__section--next-button">
+          <button
+            type="button"
+            class="main__section--next-button button-more-text"
+          >
             Читать далее
           </button>
-          <button type="button" class="main__section--close-button">
+          <button
+            type="button"
+            class="main__section--close-button button-less-text button-hidden"
+          >
             Скрыть
           </button>
         </div>
@@ -343,13 +430,13 @@
         </ul>
         <button
           type="button"
-          class="section-repair__show-all-brand button-show-mobile"
+          class="section-repair__show-all-brand button-more-brands button-show-mobile"
         >
           Показать все
         </button>
         <button
           type="button"
-          class="section-repair__hidden-all-brand section-repair__hidden-all-brand--button-hidden button-show-mobile"
+          class="section-repair__hidden-all-brand button-less-brands button-show-mobile button-hidden"
         >
           Скрыть
         </button>
@@ -390,7 +477,7 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item hidden-tablet">
+            <li class="slider-appliances__item tablet hidden-tablet">
               <a href="#" class="slider-appliances__link"> Ремонт мониторов </a>
               <a href="#" class="slider-appliances__link--img">
                 <img
@@ -400,7 +487,7 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item hidden-desktop">
+            <li class="slider-appliances__item desktop hidden-desktop">
               <a href="#" class="slider-appliances__link">
                 Ремонт стиральных машин
               </a>
@@ -412,7 +499,7 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item hidden-desktop">
+            <li class="slider-appliances__item desktop hidden-desktop">
               <a href="#" class="slider-appliances__link">
                 Ремонт посудомоечных машин
               </a>
@@ -424,7 +511,7 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item tablet hidden-desktop">
+            <li class="slider-appliances__item tablet desktop hidden-desktop">
               <a href="#" class="slider-appliances__link">
                 Ремонт сплит-систем
               </a>
@@ -436,7 +523,7 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item tablet hidden-desktop">
+            <li class="slider-appliances__item tablet desktop hidden-desktop">
               <a href="#" class="slider-appliances__link">
                 Ремонт смартфонов
               </a>
@@ -486,13 +573,13 @@
         </ul>
         <button
           type="button"
-          class="section-appliances__show-all-brand button-show-mobile"
+          class="section-appliances__show-all-brand button-more-type-rem button-show-mobile"
         >
           Показать все
         </button>
         <button
           type="button"
-          class="section-appliances__hidden-all-appliances section-appliances__hidden-all-appliances--button-hidden button-show-mobile"
+          class="section-appliances__hidden-all-appliances section-appliances__hidden-all-appliances--button-hidden button-show-mobile button-less-type-rem button-hidden"
         >
           Скрыть
         </button>
@@ -678,85 +765,7 @@
           />
         </a>
       </section>
-      <aside class="feedback">
-        <button type="button">
-          <img
-            src="image/close.svg"
-            alt="Закрыть окно"
-            class="feedback__close-button"
-          />
-        </button>
-        <h2 class="feedback__title">Обратная связь</h2>
-        <form action="" method="" class="feedback__form">
-          <input
-            type="text"
-            class="feedback__form--name"
-            required
-            placeholder="Имя"
-          />
-          <input
-            type="tel"
-            class="feedback__form--phone"
-            required
-            placeholder="Телефон"
-          />
-          <input
-            type="email"
-            class="feedback__form--email"
-            placeholder="Электронная почта"
-          />
-          <textarea
-            class="feedback__form--message"
-            placeholder="Сообщение"
-          ></textarea>
-          <p class="feedback__form--info">
-            Нажимая “отправить”, вы даете согласие на
-            <a href="#" class="feedback__form--personal-data personal-data"
-              >обработку персональных данных</a
-            >
-            и соглашаетесь с нашей
-            <a href="#" class="feedback__form--privacy policy"
-              >политикой конфиденциальности</a
-            >
-          </p>
-          <button type="submit" class="feedback__form--button">
-            Отправить
-            <img src="image/dropdownwhite.svg" alt="" />
-          </button>
-        </form>
-      </aside>
-      <aside class="order-call">
-        <button type="button">
-          <img
-            src="image/close.svg"
-            alt="Закрыть окно"
-            class="order-call__close-button"
-          />
-        </button>
-        <h2 class="order-call__title">Заказать звонок</h2>
-        <form action="" method="" class="order-call__form">
-          <input
-            type="tel"
-            class="order-call__form--phone"
-            required
-            placeholder="Телефон"
-          />
-          <p class="order-call__form--info">
-            Нажимая “отправить”, вы даете согласие на
-            <a href="#" class="order-call__form--personal-data personal-data"
-              >обработку персональных данных</a
-            >
-            и соглашаетесь с нашей
-            <a href="#" class="order-call__form--privacy policy"
-              >политикой конфиденциальности</a
-            >
-          </p>
-          <button type="submit" class="order-call__form--button">
-            Отправить
-            <img src="image/dropdownwhite.svg" alt="" />
-          </button>
-        </form>
-      </aside>
+
       <footer class="main__footer footer">
         <ul class="footer__list">
           <li class="footer__list--item">
@@ -774,4 +783,5 @@
       </footer>
     </main>
   </body>
+  <script src="scripts/script.js"></script>
 </html>

@@ -27,16 +27,22 @@ body {
    font-size: $font-all-text;
    line-height: 24px;
 
-   .main-opacity {
+   .main-opacity,
+   .menu-opacity {
       opacity: 5%;
       position: fixed;
+      pointer-events: none;
+      transition-duration: 400ms;
+   }
+
+   .main-opacity {
+      opacity: 1%;
    }
 
    .menu {
       width: 320px;
       height: 100%;
       background-color: $background-header;
-      box-shadow: 5px 0 50px 1px gray;
       overflow: auto;
 
       .menu__header {
@@ -135,9 +141,11 @@ body {
       width: 440px;
       box-shadow: 16px 0px 52px 0px #0E185033;
       background-color: $background-header;
-      position: absolute;
       right: 0;
       height: 100%;
+      z-index: 2;
+      position: fixed;
+      right: -100%;
 
       .feedback__close-button,
       .order-call__close-button {
@@ -209,6 +217,27 @@ body {
       }
    }
 
+   .menu-animation-open {
+      left: 0;
+      transition-duration: 400ms;
+   }
+
+   .menu-animation-close {
+      left: -100%;
+      transition-duration: 400ms;
+   }
+
+   .feedback-animation-open,
+   .order-call-animation-open {
+      right: 0;
+      transition-duration: 400ms;
+   }
+
+   .feedback-animation-close,
+   .order-call-animation-close {
+      transition-duration: 400ms;
+   }
+
    button {
       cursor: pointer;
    }
@@ -234,13 +263,13 @@ body {
    }
 
    .main__section--close-button::before,
-   .section-repair__hidden-all-brand--button-hidden::before,
+   .section-repair__hidden-all-brand::before,
    .section-appliances__hidden-all-appliances--button-hidden::before {
       transform: rotate(180deg);
    }
 
    .about-all,
-   .main__section--close-button {
+   .button-hidden {
       display: none;
    }
 
@@ -331,7 +360,9 @@ body {
    }
 
    .main__wrapper-about {
-      .section-about__text {
+
+      .section-about__text,
+      .section-about__text--visibility {
          padding: 0 $padding-gap $padding-gap $padding-gap;
          line-height: 18px;
       }
@@ -343,7 +374,7 @@ body {
    }
 
    .title-service {
-      background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F898.61%);
+      background: linear-gradient(270deg, #FFFFFF 61%, #F8F8F898);
       color: $font-color-active;
       font-size: $font-menu;
       padding: $padding-gap;
@@ -366,7 +397,7 @@ body {
          border-radius: 5px;
          background-color: $background-header;
          min-width: 220px;
-         max-width: 240px;
+         width: 240px;
          display: flex;
          justify-content: space-between;
          align-items: center;
@@ -386,7 +417,7 @@ body {
          height: 160px;
          border: $color-border-slider2 1px solid;
          border-radius: 5px;
-         min-width: 220px;
+         min-width: 240px;
          max-width: 240px;
          display: flex;
          flex-direction: column;
@@ -508,8 +539,14 @@ body {
          margin-left: $padding-gap;
          margin-right: $padding-gap;
 
-         .prise-list-other--wrapper {
-            border-radius: 2em;
+         .prise-list-other-services:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+         }
+
+         .prise-list-other-services:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
          }
 
          .prise-list-other__item {
@@ -584,9 +621,6 @@ body {
 @media (max-width: 500px) {
    body {
 
-      .menu-hidden,
-      .feedback,
-      // .order-call,
       .section-price__other,
       .nav-list-wrapper,
       .about-tablet,
@@ -599,7 +633,23 @@ body {
       .menu {
          position: fixed;
          z-index: 1;
+      }
+
+      .feedback,
+      .order-call,
+      .menu {
          width: 100%;
+
+         .feedback__close-button,
+         .order-call__close-button {
+            left: 30px;
+            top: 24px;
+         }
+
+         .order-call__title,
+         .feedback__title {
+            margin-top: 34px;
+         }
       }
 
       .header {
@@ -630,7 +680,7 @@ body {
    }
 }
 
-@media (min-width: 501px) and (max-width: 768px) {
+@media (min-width: 501px) and (max-width: 950px) {
    body {
       .footer__list {
          flex-direction: row;
@@ -685,25 +735,34 @@ body {
 
          .list-service__wrapper,
          .about-desktop,
-         .feedback,
-         .order-call,
          .slider-dots-list,
          .prise-list-mobile,
-         .section-repair__hidden-all-brand--button-hidden,
-         .section-appliances__hidden-all-appliances--button-hidden,
          .hidden-tablet,
          .hidden-desktop {
             display: none;
          }
       }
 
-      .menu-hidden {
-         display: none;
+      .slider-appliances {
+         flex-wrap: wrap;
       }
 
       .menu {
+         left: -320px;
          position: fixed;
-         z-index: 1;
+         z-index: 2;
+      }
+
+      .menu-animation-open {
+         box-shadow: 5px 0 50px 1px gray;
+         left: 0;
+         transition-duration: 400ms;
+      }
+
+      .menu-animation-close {
+         box-shadow: 0;
+         left: -320px;
+         transition-duration: 400ms;
       }
    }
 
@@ -733,18 +792,21 @@ body {
    }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 951px) {
    body {
+
+      .feedback-hidden,
+      .order-call-hidden {
+         display: none;
+      }
+
       .main {
          position: relative;
          margin-left: 320px;
 
-         .feedback,
-         .order-call,
          .slider-dots-list,
          .prise-list-mobile,
-         .section-repair__hidden-all-brand--button-hidden,
-         .section-appliances__hidden-all-appliances--button-hidden,
+         // .section-appliances__hidden-all-appliances--button-hidden,
          .hidden-desktop {
             display: none;
          }
@@ -796,7 +858,7 @@ body {
       }
 
       .slider-appliances {
-         overflow: hidden;
+         flex-wrap: wrap;
       }
 
       .footer__list {
@@ -821,6 +883,10 @@ body {
          position: fixed;
          left: 0;
          box-shadow: none;
+
+         .menu__header--button-close {
+            display: none;
+         }
       }
    }
 }
