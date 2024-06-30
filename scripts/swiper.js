@@ -4,6 +4,11 @@ const swiper = new Swiper(".swiper-container", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  breakpoints: {
+    501: {
+      enabled: false,
+    },
+  },
 });
 
 // window.addEventListener("resize", function () {

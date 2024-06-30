@@ -16,20 +16,20 @@ const buttonShowText = document.querySelector(".button-more-text"),
   feedback = document.querySelector(".feedback"),
   orderCall = document.querySelector(".order-call"),
   buttonsCloseModal = document.querySelectorAll(".button-close-modal"),
-  screenWidth = window.screen.width,
-  sectionRepair = document.querySelector(".section-repair__wrapper-brands"),
-  sectionAppliances = document.querySelector(
-    ".section-appliances__wrapper-appliances"
-  ),
-  sectionPrice = document.querySelector(".section-price");
+  screenWidth = window.screen.width;
+//   sectionRepair = document.querySelector(".section-repair__wrapper-brands"),
+//   sectionAppliances = document.querySelector(
+//     ".section-appliances__wrapper-appliances"
+//   ),
+//   sectionPrice = document.querySelector(".section-price");
 
-window.addEventListener("resize", function () {
-  if (screenWidth > 500) {
-    sectionRepair.classList.remove("swiper-container");
-    sectionAppliances.classList.remove("swiper-container");
-    sectionPrice.classList.remove("swiper-container");
-  }
-});
+// window.addEventListener("resize", function () {
+//   if (screenWidth > 500) {
+//     sectionRepair.classList.remove("swiper-container");
+//     sectionAppliances.classList.remove("swiper-container");
+//     sectionPrice.classList.remove("swiper-container");
+//   }
+// });
 // функция показать текст
 buttonShowText.addEventListener("click", function () {
   for (const item of textAbout) {
