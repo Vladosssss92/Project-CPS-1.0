@@ -27,6 +27,10 @@ body {
    font-size: $font-all-text;
    line-height: 24px;
 
+   .main {
+      overflow-x: hidden;
+   }
+
    .main-opacity,
    .menu-opacity {
       opacity: 5%;
@@ -253,7 +257,7 @@ body {
 
       &::before {
          content: "";
-         background-image: url("/image/expand.svg");
+         background-image: url("/Project-CPS-1.0/image/expand.svg");
          width: 24px;
          height: 24px;
          position: absolute;
@@ -387,20 +391,23 @@ body {
    .prise-list-mobile {
       display: flex;
       flex-wrap: nowrap;
-      overflow: auto;
-      gap: $padding-gap;
+      // overflow: hidden;
+      // gap: $padding-gap;
       padding: $padding-gap;
 
+      // min-width: 0;
       .slider-brands__item {
          height: 72px;
          border: $color-border-slider2 1px solid;
          border-radius: 5px;
          background-color: $background-header;
          min-width: 220px;
-         width: 240px;
+         max-width: 240px;
          display: flex;
          justify-content: space-between;
          align-items: center;
+         margin-right: $padding-gap;
+         margin-bottom: $padding-gap;
 
          img {
             padding-left: $padding-gap;
@@ -422,6 +429,8 @@ body {
          display: flex;
          flex-direction: column;
          justify-content: space-between;
+         margin-right: $padding-gap;
+         margin-bottom: $padding-gap;
 
          .slider-appliances__link {
             padding: $padding-gap;
@@ -442,11 +451,13 @@ body {
       border: $color-border-slider2 1px solid;
       border-radius: 5px;
       min-width: 260px;
+      max-width: 260px;
       height: 200px;
       background-color: $background-header;
       padding: $padding-gap;
       padding-top: 0;
       position: relative;
+      margin-right: $padding-gap;
 
       p {
          line-height: 18px;
@@ -481,21 +492,22 @@ body {
       }
    }
 
-   .slider-dots-list {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      padding-bottom: $padding-gap;
+   .swiper-container {
+      position: relative;
 
-      .slider-dots-list__item {
-         border: $color-slider-dots 6px solid;
-         border-radius: 50%;
+      .swiper-pagination {
+         bottom: -10px;
       }
 
-      .slider-dots-list__item--active,
-      .slider-dots-list__item:active {
-         border: $color-slider-dots-active 6px solid;
+      .swiper-slide {
+         width: auto;
       }
+   }
+
+   .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background-color: $color-slider-dots-active;
    }
 
    .section-price__info,
@@ -630,6 +642,11 @@ body {
          display: none;
       }
 
+      .title-service {
+         margin-top: 28px;
+         ;
+      }
+
       .menu {
          position: fixed;
          z-index: 1;
@@ -652,11 +669,14 @@ body {
          }
       }
 
-      .header {
-         .nav-list {
-            .nav-list-wrapper__call-chat-profile {
-               display: none;
-            }
+      .section-price__info {
+         margin-top: 25px;
+         ;
+      }
+
+      .section-price__wrapper {
+         .swiper-pagination-bullets {
+            bottom: -20px;
          }
       }
    }
@@ -664,6 +684,10 @@ body {
    .header {
       .header__nav {
          .nav-list {
+            .nav-list-wrapper__call-chat-profile {
+               display: none;
+            }
+
             .nav-list__item {
                .nav-list__item--link-logo::after {
                   content: "";
@@ -738,7 +762,8 @@ body {
          .slider-dots-list,
          .prise-list-mobile,
          .hidden-tablet,
-         .hidden-desktop {
+         .hidden-desktop,
+         .swiper-pagination {
             display: none;
          }
       }
@@ -786,8 +811,12 @@ body {
    }
 
    .section-repair {
+      min-width: 0;
+
       .slider-brands {
          flex-wrap: wrap;
+         min-width: 0;
+         position: relative;
       }
    }
 }
@@ -806,7 +835,7 @@ body {
 
          .slider-dots-list,
          .prise-list-mobile,
-         // .section-appliances__hidden-all-appliances--button-hidden,
+         .swiper-pagination,
          .hidden-desktop {
             display: none;
          }

@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="fonts/stylesheet.css" />
+
     <title>Document</title>
   </head>
   <body>
-    <aside class="main__menu menu">
+    <aside class="main__menu menu menu-animation-close">
       <div class="menu__header">
         <div class="menu__header--close-logo">
           <button class="menu__header--button-close">
@@ -350,84 +355,72 @@
         <h2 class="section-repair__title title-service">
           Ремонт техники различных брендов
         </h2>
-        <div class="section-repair__wrapper-brands">
-          <ul class="section-repair__list-brands slider-brands">
-            <li class="slider-brands__item">
+        <div class="section-repair__wrapper-brands swiper-container">
+          <ul class="section-repair__list-brands slider-brands swiper-wrapper">
+            <li class="slider-brands__item swiper-slide">
               <img src="image/Lenovo.svg" alt="Lenovo" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Lenovo" />
               </a>
             </li>
-            <li class="slider-brands__item">
+            <li class="slider-brands__item swiper-slide">
               <img src="image/Samsung.svg" alt="Samsung" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Samsung" />
               </a>
             </li>
-            <li class="slider-brands__item">
+            <li class="slider-brands__item swiper-slide">
               <img src="image/Apple.svg" alt="Apple" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Apple" />
               </a>
             </li>
-            <li class="slider-brands__item">
+            <li class="slider-brands__item swiper-slide">
               <img src="image/Bosch.svg" alt="Bosch" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Bosch" />
               </a>
             </li>
-            <li class="slider-brands__item">
+            <li class="slider-brands__item swiper-slide">
               <img src="image/HP.svg" alt="HP" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд HP" />
               </a>
             </li>
-            <li class="slider-brands__item">
+            <li class="slider-brands__item swiper-slide">
               <img src="image/Acer.svg" alt="Acer" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Acer" />
               </a>
             </li>
-            <li class="slider-brands__item tablet hidden-tablet">
+            <li class="slider-brands__item tablet hidden-tablet swiper-slide">
               <img src="image/Viewsonic.svg" alt="ViewSonic" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Viewsonic" />
               </a>
             </li>
-            <li class="slider-brands__item tablet hidden-tablet">
+            <li class="slider-brands__item tablet hidden-tablet swiper-slide">
               <img src="image/Sony.svg" alt="Sony" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Sony" />
               </a>
             </li>
-            <li class="slider-brands__item desktop hidden-desktop">
+            <li class="slider-brands__item desktop hidden-desktop swiper-slide">
               <img src="image/Apple.svg" alt="Apple" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Apple" />
               </a>
             </li>
-            <li class="slider-brands__item desktop hidden-desktop">
+            <li class="slider-brands__item desktop hidden-desktop swiper-slide">
               <img src="image/Bosch.svg" alt="Bosch" />
               <a href="#" class="slider-brand__link">
                 <img src="image/dropdown.svg" src="Бренд Bosch" />
               </a>
             </li>
           </ul>
+          <div class="swiper-pagination"></div>
         </div>
-        <ul class="section-repair__slider-dots slider-dots-list">
-          <li
-            class="slider-dots-list__item slider-dots-list__item--active"
-          ></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-        </ul>
+
         <button
           type="button"
           class="section-repair__show-all-brand button-more-brands button-show-mobile"
@@ -445,9 +438,11 @@
         <h2 class="section-appliances__title title-service">
           Ремонт различных видов техники
         </h2>
-        <div class="section-appliances__wrapper-appliances">
-          <ul class="section-appliances__list-brands slider-appliances">
-            <li class="slider-appliances__item">
+        <div class="section-appliances__wrapper-appliances swiper-container">
+          <ul
+            class="section-appliances__list-brands slider-appliances swiper-wrapper"
+          >
+            <li class="slider-appliances__item swiper-slide">
               <a href="#" class="slider-appliances__link"> Ремонт ноутбуков </a>
               <a href="#" class="slider-appliances__link--img">
                 <img
@@ -457,7 +452,7 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item">
+            <li class="slider-appliances__item swiper-slide">
               <a href="#" class="slider-appliances__link"> Ремонт планшетов </a>
               <a href="#" class="slider-appliances__link--img">
                 <img
@@ -467,7 +462,7 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item">
+            <li class="slider-appliances__item swiper-slide">
               <a href="#" class="slider-appliances__link"> Ремонт ПК </a>
               <a href="#" class="slider-appliances__link--img">
                 <img
@@ -477,7 +472,9 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item tablet hidden-tablet">
+            <li
+              class="slider-appliances__item tablet hidden-tablet swiper-slide"
+            >
               <a href="#" class="slider-appliances__link"> Ремонт мониторов </a>
               <a href="#" class="slider-appliances__link--img">
                 <img
@@ -487,7 +484,9 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item desktop hidden-desktop">
+            <li
+              class="slider-appliances__item desktop hidden-desktop swiper-slide"
+            >
               <a href="#" class="slider-appliances__link">
                 Ремонт стиральных машин
               </a>
@@ -499,7 +498,9 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item desktop hidden-desktop">
+            <li
+              class="slider-appliances__item desktop hidden-desktop swiper-slide"
+            >
               <a href="#" class="slider-appliances__link">
                 Ремонт посудомоечных машин
               </a>
@@ -511,7 +512,9 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item tablet desktop hidden-desktop">
+            <li
+              class="slider-appliances__item tablet desktop hidden-desktop swiper-slide"
+            >
               <a href="#" class="slider-appliances__link">
                 Ремонт сплит-систем
               </a>
@@ -523,7 +526,9 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item tablet desktop hidden-desktop">
+            <li
+              class="slider-appliances__item tablet desktop hidden-desktop swiper-slide"
+            >
               <a href="#" class="slider-appliances__link">
                 Ремонт смартфонов
               </a>
@@ -535,7 +540,9 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item desktop hidden-desktop">
+            <li
+              class="slider-appliances__item desktop hidden-desktop swiper-slide"
+            >
               <a href="#" class="slider-appliances__link"> Ремонт ПК </a>
               <a href="#" class="slider-appliances__link--img">
                 <img
@@ -545,7 +552,9 @@
                 />
               </a>
             </li>
-            <li class="slider-appliances__item desktop hidden-desktop">
+            <li
+              class="slider-appliances__item desktop hidden-desktop swiper-slide"
+            >
               <a href="#" class="slider-appliances__link"> Ремонт ноутбуков </a>
               <a href="#" class="slider-appliances__link--img">
                 <img
@@ -556,21 +565,8 @@
               </a>
             </li>
           </ul>
+          <div class="swiper-pagination"></div>
         </div>
-        <ul class="section-appliances__slider-dots slider-dots-list">
-          <li
-            class="slider-dots-list__item slider-dots-list__item--active"
-          ></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-        </ul>
         <button
           type="button"
           class="section-appliances__show-all-brand button-more-type-rem button-show-mobile"
@@ -586,9 +582,9 @@
       </section>
       <section class="main__section-price section-price">
         <h2 class="section-price__title title-service">Цены на услуги</h2>
-        <div class="section-price__wrapper">
-          <ul class="section-price__mobile prise-list-mobile">
-            <li class="prise-list-mobile__item">
+        <div class="section-price__wrapper swiper-container">
+          <ul class="section-price__mobile prise-list-mobile swiper-wrapper">
+            <li class="prise-list-mobile__item swiper-slide">
               <p class="prise-list-mobile__item--head prise-list-head">
                 Ремонтные услуги
               </p>
@@ -602,7 +598,7 @@
                 <img src="image/dropdownwhite.svg" alt="Заказать" />
               </a>
             </li>
-            <li class="prise-list-mobile__item">
+            <li class="prise-list-mobile__item swiper-slide">
               <p class="prise-list-mobile__item--head prise-list-head">
                 Ремонтные услуги
               </p>
@@ -616,7 +612,7 @@
                 <img src="image/dropdownwhite.svg" alt="Заказать" />
               </a>
             </li>
-            <li class="prise-list-mobile__item">
+            <li class="prise-list-mobile__item swiper-slide swiper-slide">
               <p class="prise-list-mobile__item--head prise-list-head">
                 Ремонтные услуги
               </p>
@@ -632,7 +628,7 @@
                 <img src="image/dropdownwhite.svg" alt="Заказать" />
               </a>
             </li>
-            <li class="prise-list-mobile__item">
+            <li class="prise-list-mobile__item swiper-slide">
               <p class="prise-list-mobile__item--head prise-list-head">
                 Ремонтные услуги
               </p>
@@ -648,7 +644,7 @@
                 <img src="image/dropdownwhite.svg" alt="Заказать" />
               </a>
             </li>
-            <li class="prise-list-mobile__item">
+            <li class="prise-list-mobile__item swiper-slide">
               <p class="prise-list-mobile__item--head prise-list-head">
                 Ремонтные услуги
               </p>
@@ -740,17 +736,8 @@
               </li>
             </div>
           </ul>
+          <div class="swiper-pagination"></div>
         </div>
-        <ul class="section-price__slider-dots slider-dots-list">
-          <li
-            class="slider-dots-list__item slider-dots-list__item--active"
-          ></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-          <li class="slider-dots-list__item"></li>
-        </ul>
         <p class="section-price__info">
           Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную
           услугу. Для получения коммерческого предложения на постоянное
@@ -783,5 +770,7 @@
       </footer>
     </main>
   </body>
-  <script src="scripts/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="scripts/modal.js"></script>
+  <script src="scripts/swiper.js"></script>
 </html>

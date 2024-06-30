@@ -19,6 +19,9 @@ body {
   font-size: 14px;
   line-height: 24px;
 }
+body .main {
+  overflow-x: hidden;
+}
 body .main-opacity,
 body .menu-opacity {
   opacity: 5%;
@@ -248,7 +251,7 @@ body .main__section--next-button::before,
 body .main__section--close-button::before,
 body .button-show-mobile::before {
   content: "";
-  background-image: url("/image/expand.svg");
+  background-image: url("/Project-CPS-1.0/image/expand.svg");
   width: 24px;
   height: 24px;
   position: absolute;
@@ -361,8 +364,6 @@ body .slider-appliances,
 body .prise-list-mobile {
   display: flex;
   flex-wrap: nowrap;
-  overflow: auto;
-  gap: 16px;
   padding: 16px;
 }
 body .slider-brands .slider-brands__item,
@@ -373,10 +374,12 @@ body .prise-list-mobile .slider-brands__item {
   border-radius: 5px;
   background-color: #ffffff;
   min-width: 220px;
-  width: 240px;
+  max-width: 240px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
 }
 body .slider-brands .slider-brands__item img,
 body .slider-appliances .slider-brands__item img,
@@ -401,6 +404,8 @@ body .prise-list-mobile .slider-appliances__item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-right: 16px;
+  margin-bottom: 16px;
 }
 body .slider-brands .slider-appliances__item .slider-appliances__link,
 body .slider-appliances .slider-appliances__item .slider-appliances__link,
@@ -421,11 +426,13 @@ body .prise-list-mobile__item {
   border: #EAEAEA 1px solid;
   border-radius: 5px;
   min-width: 260px;
+  max-width: 260px;
   height: 200px;
   background-color: #ffffff;
   padding: 16px;
   padding-top: 0;
   position: relative;
+  margin-right: 16px;
 }
 body .prise-list-mobile__item p {
   line-height: 18px;
@@ -455,19 +462,19 @@ body .prise-list-mobile__item .prise-list-mobile__item--order img {
   width: 7px;
   height: 10px;
 }
-body .slider-dots-list {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  padding-bottom: 16px;
+body .swiper-container {
+  position: relative;
 }
-body .slider-dots-list .slider-dots-list__item {
-  border: #DDDDDD 6px solid;
-  border-radius: 50%;
+body .swiper-container .swiper-pagination {
+  bottom: -10px;
 }
-body .slider-dots-list .slider-dots-list__item--active,
-body .slider-dots-list .slider-dots-list__item:active {
-  border: #B5B6BC 6px solid;
+body .swiper-container .swiper-slide {
+  width: auto;
+}
+body .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #B5B6BC;
 }
 body .section-price__info,
 body .section-price__commercial-proposal {
@@ -577,6 +584,9 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   body .list-service__wrapper {
     display: none;
   }
+  body .title-service {
+    margin-top: 28px;
+  }
   body .menu {
     position: fixed;
     z-index: 1;
@@ -603,7 +613,13 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   body .menu .feedback__title {
     margin-top: 34px;
   }
-  body .header .nav-list .nav-list-wrapper__call-chat-profile {
+  body .section-price__info {
+    margin-top: 25px;
+  }
+  body .section-price__wrapper .swiper-pagination-bullets {
+    bottom: -20px;
+  }
+  .header .header__nav .nav-list .nav-list-wrapper__call-chat-profile {
     display: none;
   }
   .header .header__nav .nav-list .nav-list__item .nav-list__item--link-logo::after {
@@ -658,7 +674,8 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   body .main .slider-dots-list,
   body .main .prise-list-mobile,
   body .main .hidden-tablet,
-  body .main .hidden-desktop {
+  body .main .hidden-desktop,
+  body .main .swiper-pagination {
     display: none;
   }
   body .slider-appliances {
@@ -695,8 +712,13 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
     position: absolute;
     top: 14px;
   }
+  .section-repair {
+    min-width: 0;
+  }
   .section-repair .slider-brands {
     flex-wrap: wrap;
+    min-width: 0;
+    position: relative;
   }
 }
 @media (min-width: 951px) {
@@ -710,6 +732,7 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   }
   body .main .slider-dots-list,
   body .main .prise-list-mobile,
+  body .main .swiper-pagination,
   body .main .hidden-desktop {
     display: none;
   }
