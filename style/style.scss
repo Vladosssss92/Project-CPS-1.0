@@ -398,11 +398,8 @@ body {
    .prise-list-mobile {
       display: flex;
       flex-wrap: nowrap;
-      // overflow: hidden;
-      // gap: $padding-gap;
       padding: $padding-gap;
 
-      // min-width: 0;
       .slider-brands__item {
          height: 72px;
          border: $color-border-slider2 1px solid;
@@ -840,6 +837,7 @@ body {
       .main {
          position: relative;
          margin-left: 320px;
+         max-width: 1800px;
 
          .slider-dots-list,
          .prise-list-mobile,

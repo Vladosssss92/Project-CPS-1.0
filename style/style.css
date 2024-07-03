@@ -260,7 +260,7 @@ body .main__section--next-button::before,
 body .main__section--close-button::before,
 body .button-show-mobile::before {
   content: "";
-  background-image: url("/image/expand.svg");
+  background-image: url("../image/expand.svg");
   width: 24px;
   height: 24px;
   position: absolute;
@@ -737,6 +737,7 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   body .main {
     position: relative;
     margin-left: 320px;
+    max-width: 1800px;
   }
   body .main .slider-dots-list,
   body .main .prise-list-mobile,
