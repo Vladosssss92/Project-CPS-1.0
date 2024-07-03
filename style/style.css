@@ -254,7 +254,7 @@ body .main__section--next-button::before,
 body .main__section--close-button::before,
 body .button-show-mobile::before {
   content: "";
-  background-image: url("/Project-CPS-1.0/image/expand.svg");
+  background-image: url("/image/expand.svg");
   width: 24px;
   height: 24px;
   position: absolute;

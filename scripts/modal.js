@@ -16,20 +16,51 @@ const buttonShowText = document.querySelector(".button-more-text"),
   feedback = document.querySelector(".feedback"),
   orderCall = document.querySelector(".order-call"),
   buttonsCloseModal = document.querySelectorAll(".button-close-modal"),
-  screenWidth = window.screen.width;
-//   sectionRepair = document.querySelector(".section-repair__wrapper-brands"),
-//   sectionAppliances = document.querySelector(
-//     ".section-appliances__wrapper-appliances"
-//   ),
-//   sectionPrice = document.querySelector(".section-price");
+  sectionRepair = document.querySelector(".section-repair__list-brands"),
+  sectionAppliances = document.querySelector(".slider-appliances"),
+  sectionPrice = document.querySelector(".prise-list-mobile"),
+  sliderWrapBrands = document.querySelector(".section-repair__wrapper-brands");
 
-// window.addEventListener("resize", function () {
-//   if (screenWidth > 500) {
-//     sectionRepair.classList.remove("swiper-container");
-//     sectionAppliances.classList.remove("swiper-container");
-//     sectionPrice.classList.remove("swiper-container");
-//   }
-// });
+// функция закрытия модальных окон при клике вне них
+document.addEventListener("click", function (e) {
+  let asideMenuActive = e.composedPath().includes(asideMenu);
+  let asideMenuButton = e.composedPath().includes(buttonShowMenu);
+  let feedbackActive = e.composedPath().includes(feedback);
+  for (let buttonCall of buttonsCall) {
+    var feedbackButton = e.composedPath().includes(buttonCall);
+  }
+  let orderCallActive = e.composedPath().includes(orderCall);
+  for (let buttonMessage of buttonsMessage) {
+    var orderCallButton = e.composedPath().includes(buttonMessage);
+  }
+  // если открыто модальное окно - закрываем по клику вне его
+  if (
+    (feedback.classList.contains("feedback-animation-open") ||
+      orderCall.classList.contains("order-call-animation-open")) &&
+    (asideMenu.classList.contains("menu-animation-open") ||
+      !asideMenu.classList.contains("menu-animation-open")) &&
+    !asideMenuActive &&
+    !feedbackActive &&
+    !feedbackButton &&
+    !orderCallActive &&
+    !orderCallButton
+  ) {
+    closeModal();
+    mainDocument.classList.remove("main-opacity");
+  }
+
+  // если открыто меню - закрываем по клику вне его
+  if (
+    asideMenu.classList.contains("menu-animation-open") &&
+    !asideMenuActive &&
+    !asideMenuButton &&
+    !feedbackActive &&
+    !orderCallActive
+  ) {
+    closeMenu();
+  }
+});
+
 // функция показать текст
 buttonShowText.addEventListener("click", function () {
   for (const item of textAbout) {
@@ -108,16 +139,13 @@ buttonHiddenTypeRem.addEventListener("click", function () {
 
 // функция открытия меню для мобилок и планшетов
 buttonShowMenu.addEventListener("click", function () {
-  // asideMenu.classList.remove("menu-hidden");
   mainDocument.classList.add("main-opacity");
   asideMenu.classList.add("menu-animation-open");
   asideMenu.classList.remove("menu-animation-close");
 });
 
 // функция для закрытия меню
-
 function closeMenu() {
-  // asideMenu.classList.add("menu-hidden");
   mainDocument.classList.remove("main-opacity");
   asideMenu.classList.remove("menu-animation-open");
   asideMenu.classList.add("menu-animation-close");
@@ -127,8 +155,8 @@ function closeMenu() {
 buttonCloseMenu.addEventListener("click", closeMenu);
 
 // закрытие меню по клавише esc
-document.addEventListener("keydown", function (event) {
-  if (event.code == "Escape") {
+document.addEventListener("keydown", function (e) {
+  if (e.code == "Escape") {
     closeMenu();
   }
 });
@@ -160,29 +188,24 @@ function closeModal() {
   feedback.classList.add("feedback-animation-close");
   orderCall.classList.remove("order-call-animation-open");
   orderCall.classList.add("order-call-animation-close");
-  mainDocument.classList.remove("main-opacity");
 }
 
+// закрытие модального окна по клику
 for (const buttonCloseModal of buttonsCloseModal) {
-  buttonCloseModal.addEventListener("click", closeModal);
-  // console.log(!feedback.classList.contains("feedback-hidden"));
+  buttonCloseModal.addEventListener("click", function () {
+    closeModal();
+    if (asideMenu.classList.contains("menu-animation-open")) {
+      mainDocument.classList.add("main-opacity");
+    }
+    if (!asideMenu.classList.contains("menu-animation-open")) {
+      mainDocument.classList.remove("main-opacity");
+    }
+  });
 }
 
-document.addEventListener("keydown", function (event) {
-  if (event.code == "Escape") {
+// закрытие модального окна по клавише esc
+document.addEventListener("keydown", function (e) {
+  if (e.code == "Escape") {
     closeModal();
   }
 });
-
-// слайдер
-// for (let i = 0; i < dotsSlider.length; i++) {
-//   dotsSlider[i].addEventListener("click", function () {
-//     sliderList.scrollLeft =
-//       (+widthElemSlider.replace("px", "") + +gapElemsSlider.replace("px", "")) *
-//       i;
-//     for (let elem of dotsSlider) {
-//       elem.classList.remove("active");
-//     }
-//     dotsSlider[i].classList.add("active");
-//   });
-// }
