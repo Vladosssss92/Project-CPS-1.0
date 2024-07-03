@@ -150,6 +150,7 @@ body {
       z-index: 2;
       position: fixed;
       right: -100%;
+      overflow: auto;
 
       .feedback__close-button,
       .order-call__close-button {
@@ -704,7 +705,7 @@ body {
    }
 }
 
-@media (min-width: 501px) and (max-width: 950px) {
+@media (min-width: 501px) and (max-width: 1100px) {
    body {
       .footer__list {
          flex-direction: row;
@@ -821,7 +822,7 @@ body {
    }
 }
 
-@media (min-width: 951px) {
+@media (min-width: 1101px) {
    body {
 
       .feedback-hidden,

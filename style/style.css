@@ -125,6 +125,7 @@ body .order-call {
   z-index: 2;
   position: fixed;
   right: -100%;
+  overflow: auto;
 }
 body .feedback .feedback__close-button,
 body .feedback .order-call__close-button,
@@ -592,7 +593,7 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   }
   body .menu {
     position: fixed;
-    z-index: 1;
+    z-index: 3;
   }
   body .feedback,
   body .order-call,
@@ -635,7 +636,7 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
     top: 14px;
   }
 }
-@media (min-width: 501px) and (max-width: 950px) {
+@media (min-width: 501px) and (max-width: 1100px) {
   body .footer__list {
     flex-direction: row;
     justify-content: space-around;
@@ -724,7 +725,7 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
     position: relative;
   }
 }
-@media (min-width: 951px) {
+@media (min-width: 1101px) {
   body .feedback-hidden,
   body .order-call-hidden {
     display: none;
