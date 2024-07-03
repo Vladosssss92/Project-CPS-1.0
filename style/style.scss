@@ -858,8 +858,10 @@ body {
 
          .main__section--image-cps-logo {
             border-radius: 5px;
-            width: 60%;
-            height: 60%;
+            min-width: 450px;
+            max-width: 550px;
+            height: 100%;
+            align-self: center;
          }
       }
 

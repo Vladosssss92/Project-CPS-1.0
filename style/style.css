@@ -752,8 +752,10 @@ body .section-price .prise-list-other .prise-list-other__head .prise-list-head {
   }
   body .section-about .main__section--image-cps-logo {
     border-radius: 5px;
-    width: 60%;
-    height: 60%;
+    min-width: 450px;
+    max-width: 550px;
+    height: 100%;
+    align-self: center;
   }
   body .wrapper-title-repair-status {
     display: flex;
