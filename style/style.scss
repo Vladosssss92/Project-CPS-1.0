@@ -143,20 +143,22 @@ body {
    .feedback,
    .order-call {
       width: 440px;
-      box-shadow: 16px 0px 52px 0px #0E185033;
       background-color: $background-header;
       right: 0;
       height: 100%;
       z-index: 2;
       position: fixed;
       right: -100%;
-      overflow: auto;
 
-      .feedback__close-button,
-      .order-call__close-button {
+      .modal-wrapper {
+         height: 100%;
+         overflow: auto;
+      }
+
+      .button-close-modal {
          position: absolute;
          top: 48px;
-         left: -58px;
+         left: -52px;
       }
 
       .feedback__title,
@@ -236,11 +238,15 @@ body {
    .order-call-animation-open {
       right: 0;
       transition-duration: 400ms;
+      box-shadow: 160px 0px 52px 0px #0E185033;
+      box-shadow: 16px 0px 52px 0px #0E185033;
+      box-shadow: -2px 0px 4px 0px #454F7E05;
    }
 
    .feedback-animation-close,
    .order-call-animation-close {
       transition-duration: 400ms;
+      box-shadow: 0;
    }
 
    button {
@@ -650,7 +656,7 @@ body {
 
       .menu {
          position: fixed;
-         z-index: 3;
+         z-index: 2;
       }
 
       .feedback,
@@ -658,8 +664,7 @@ body {
       .menu {
          width: 100%;
 
-         .feedback__close-button,
-         .order-call__close-button {
+         .button-close-modal {
             left: 30px;
             top: 24px;
          }
@@ -797,8 +802,10 @@ body {
 
       .main__section--image-cps-logo {
          border-radius: 5px;
-         width: 60%;
-         height: 60%;
+         min-width: 350px;
+         max-width: 430px;
+         height: 100%;
+         align-self: center;
       }
 
       .nav-list__item--link-logo::after {
